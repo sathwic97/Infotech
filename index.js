@@ -42,7 +42,7 @@ connection.connect((err) => {
 app.post("/infotech/signup", upload.single(), (req, res) => {
     let path = req.file.path;
     path = path.replace("\\", "/");
-    let sqlQuery = ` INSERT INTO user_data (first_name,last_name,gender,city,state,country,marital_status,email,user_name,password,profile_pic) VALUES('${req.body.firstName}','${req.body.lastName}','${req.body.gender}','${req.body.city}','${req.body.state}','${req.body.country}','${req.body.maritalStatus}','${req.body.email}','${req.body.user_name}','${req.body.password}','${path}')`;
+    let sqlQuery = ` INSERT INTO user_data (first_name,last_name,gender,city,state,country,marital_status,email,user_name,password,profile_pic) VALUES('${req.body.firstName}','${req.body.lastName}','${req.body.gender}','${req.body.city}','${req.body.state}','${req.body.country}','${req.body.maritalStatus}','${req.body.email}','${req.body.userName}','${req.body.password}','${path}')`;
     connection.query(sqlQuery, (error, results, fields) => {
         console.log(error);
         res.json({ status: `created new account successfully` });
