@@ -1,38 +1,325 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: "sideheads";
+    src: url(./fonts/Gobold\ Thin.otf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: "boxheading";
+    src: url(./fonts/good\ times\ rg.otf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: "mainheading";
+    src: url(./fonts/SFSportsNight.ttf);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+* {
+    box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+    background-color: slategrey;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: gainsboro;
+    color: darkslategray;
+    margin-bottom: 50px;
+}
+
+.flexContainer {
+    text-align: center;
+    min-height: 100%;
+}
+
+input:focus {
+    outline: none;
+    background-color: rgba(66, 69, 73, 0.5);
+    color: whitesmoke;
+}
+
+select:focus {
+    outline: none;
+    background-color: rgba(66, 69, 73, 0.5);
+    color: whitesmoke;
+}
+
+datalist:focus {
+    outline: none;
+    background-color: rgba(66, 69, 73, 0.5);
+    color: whitesmoke;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+.choiceRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.choiceRow span {
+    margin-right: 10px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+
+/* th,
+td {
+    font-family: "sideheads";
+    padding: 10px;
+    color: teal;
+    text-shadow: 2px 2px 8px grey;
+} */
+
+
+/* tr {
+    background-color: aqua;
+} */
+
+button {
+    cursor: pointer;
+}
+
+h1 {
+    font-family: "mainheading";
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 8px 8px 5px crimson;
+    color: blue;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginFormDiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: azure;
+    width: 400px;
+    padding: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.loginLabel {
+    display: none;
+    border-radius: 0 !important;
+}
+
+.loginHeading {
+    font-family: "boxheading";
+    margin-bottom: 70px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: grey;
+}
+
+.inputStyle1 {
+    display: block;
+    width: 300px;
+    height: 50px;
+    padding: 3px;
+    font-size: 16px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: grey;
+    background-color: beige;
+    box-shadow: 5px 1px 7px 0px rgba(42, 42, 42, 0.75);
+    margin-bottom: 20px;
+    border-style: hidden hidden hidden solid;
+}
+
+.btn-newAccount {
+    background-color: darkslategray;
+    width: 400px;
+    height: 50px;
+    border-style: hidden;
+    color: darkcyan;
+    font-size: 1rem;
+}
+
+.btn-newAccount:hover {
+    text-decoration: 2px underline;
+}
+
+.website {
+    background-color: transparent;
+    border-style: hidden;
+}
+
+.website:hover {
+    text-decoration: 2px underline;
+}
+
+input:required::after {
+    content: "*";
+}
+
+.newAccountButtons {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dailyStatusLegend {
+    text-align: left;
+    font-family: "boxheading";
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: grey;
+    text-shadow: 3px 3px 3px black;
+}
+
+table.dailyStatusTable {
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    width: 90%;
+    margin-bottom: 50px;
+    font-family: "sideheads";
+    padding: 10px;
+    color: darkslategrey;
+    text-shadow: 2px 2px 8px grey;
+    background-color: ghostwhite;
+}
+
+table.dailyStatusTable input {
+    width: 80%;
+    height: 40px;
+    font-size: 16px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: grey;
+    background-color: aliceblue;
+    box-shadow: 5px 1px 7px rgba(42, 42, 42, 0.75);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-style: hidden hidden hidden solid;
+}
+
+table.dailyStatusTable input:focus {
+    outline: none;
+    background-color: rgba(66, 69, 73, 0.5);
+    color: whitesmoke;
+}
+
+table.dailyStatusTable tbody tr:nth-child(even) {
+    background-color: rgba(0, 191, 255, 0.3);
+}
+
+caption {
+    font-family: "boxheading";
+    text-align: right;
+    background-color: blueviolet;
+    color: whitesmoke;
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+.leaveTable {
+    display: block;
+    min-width: 90%;
+    color: darkslategrey;
+    text-shadow: 2px 2px 8px grey;
+    background-color: ghostwhite;
+    margin-bottom: 50px;
+}
+
+.leaveLabel {
+    margin-right: 100px;
+    font-family: "sideheads";
+}
+
+.leaveTable tbody tr {
+    display: block;
+    height: 100px;
+    margin-top: 30px;
+    border-spacing: 30px;
+    margin-bottom: 50px;
+}
+
+.leaveTable td {
+    text-align: left;
+    font-size: 1.2rem;
+    color: darkslategrey;
+    height: 50px;
+}
+
+.leaveTable select {
+    width: 80%;
+    height: 40px;
+    font-size: 16px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: grey;
+    background-color: aliceblue;
+    box-shadow: 5px 1px 7px rgba(42, 42, 42, 0.75);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-style: hidden hidden hidden solid;
+}
+
+.leaveTable input {
+    width: 40%;
+    height: 40px;
+    font-size: 16px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: grey;
+    background-color: aliceblue;
+    box-shadow: 5px 1px 7px rgba(42, 42, 42, 0.75);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-style: hidden hidden hidden solid;
+}
+
+.leaveTable textarea {
+    width: 40%;
+    height: 40px;
+    font-size: 16px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: grey;
+    background-color: aliceblue;
+    box-shadow: 5px 1px 7px rgba(42, 42, 42, 0.75);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-style: hidden hidden hidden solid;
+}
+
+.leaveTable select:focus,
+.leaveTable input:focus,
+.leaveTable textarea:focus {
+    outline: none;
+    background-color: rgba(66, 69, 73, 0.5);
+    color: whitesmoke;
 }
