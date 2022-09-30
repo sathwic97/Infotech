@@ -48,7 +48,7 @@ app.post("/infotech/signup", upload.single(), (req, res) => {
         res.json({ status: `created new account successfully` });
     });
 });
-app.post("infotech/login", upload.none(), (req, res) => {
+app.post("/infotech/login", upload.none(), (req, res) => {
     let sqlQuery = `select * from user_data where user_name ='${req.body.userName}'`;
 
     connection.query(sqlQuery, (error, results, fields) => {
